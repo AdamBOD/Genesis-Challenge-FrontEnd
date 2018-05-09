@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  currentActiveLink;
+
+  sortBy ($event: any, index: number) {
+    if (this.currentActiveLink) {
+      this.currentActiveLink.className = 'filterLink';
+    }
+    this.currentActiveLink = $event.target;
+    this.currentActiveLink.className += ' active';
+  }
 }

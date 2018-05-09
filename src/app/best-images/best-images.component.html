@@ -1,0 +1,6 @@
+<span *ngIf="imagesArray?.length == 0">Loading...</span>
+
+<div class="imageContainer" *ngIf="imagesArray?.length > 0">
+  <img src="{{ image.display_sizes[0].uri }}" alt="" title=""  *ngFor="let image of imagesArray">
+</div>
+

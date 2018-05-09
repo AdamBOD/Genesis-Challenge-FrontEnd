@@ -1,0 +1,121 @@
+@import "var";
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: $default-body-background-color;
+  margin: 0;
+
+  .jumbotron {
+    background-color: $default-header-background-colour;
+    border-radius: 0px;
+    margin-bottom: 0px;
+
+    .row {
+      text-align: center;
+      .heading {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 45px;
+        color: $default-header-colour;
+        margin: auto;
+      }
+
+      .searchBar {
+        width: 40%;
+        height: 45px;
+        margin: auto;
+        margin-top: 55px;
+        margin-bottom: 55px;
+        input {
+          width: calc(100% - 46px);
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          border: none;
+          padding: 10px;
+        }
+        .searchButton {
+          width: 46px;
+          background-color: $default-button-background-colour;
+          color: $default-header-colour;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $default-button-hover-background-colour
+          }
+        }
+      }
+
+      .challengeText {
+        margin: auto;
+        font-size: 24px;
+        color: $default-header-colour;
+      }
+
+      .welcomeText {
+        margin: auto;
+        color: $default-header-colour;
+      }
+    }
+  }
+
+  .filterBar {
+    height: 45px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: $default-filterBar-background-color;
+
+    .filterLink {
+      height: 100%;
+      text-align: center;
+      cursor: pointer;
+      line-height: 42px;
+      transition: 0.1s ease-in-out;
+      margin: 0px 15px 0px 15px;
+
+      &:first-child {
+        margin-left: 37.5px;
+      }
+
+      &:hover {
+        color: orange;
+        border-bottom: 5px solid orange;
+      }
+
+      &.active {
+        color: orange;
+        border-bottom: 5px solid orange;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .imageContainer {
+    margin: 35px;
+
+    img {
+      vertical-align: middle;
+      width: 175px;
+      border-style: none;
+      margin: 25px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    .imageContainer {
+      img {
+        width: 95px;
+      }
+    }
+  }
+}
