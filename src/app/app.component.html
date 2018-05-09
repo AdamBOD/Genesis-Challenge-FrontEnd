@@ -5,8 +5,8 @@
   </div>
   <div class="row text-center">
     <div class="row searchBar">
-      <input type="text" placeholder="What are you looking for?" onfocus="this.placeholder=''" onblur="this.placeholder='What are you looking for?'">
-      <div class="searchButton">
+      <input type="text" placeholder="What are you looking for?" onfocus="this.placeholder=''" onblur="this.placeholder='What are you looking for?'" #searchInput>
+      <div class="searchButton" (click)="search(searchInput.value)">
         <i class="fa fa-search"></i>
       </div>
     </div>
@@ -18,11 +18,8 @@
     <span class="welcomeText">Everything you need for your creative projects, websites, banners, presentations, magazines and advertising</span>
   </div>
 </div>
-<div class="filterBar row">
-  <a class="filterLink" (click)="sortBy ($event, 0)">Most Popular</a>
-  <a class="filterLink" (click)="sortBy ($event, 1)">Newest</a>
-  <a class="filterLink" (click)="sortBy ($event, 2)">Best Match</a>
-</div>
-
-<app-best-images></app-best-images>
-<!-- <router-outlet></router-outlet> -->
+<mat-tab-group>
+  <mat-tab label="Popular"><app-images></app-images></mat-tab>
+  <mat-tab label="Newest"><app-new-images></app-new-images></mat-tab>
+  <mat-tab label="Best Match" class="bestMatchTab"><app-match-images></app-match-images></mat-tab>
+</mat-tab-group>
