@@ -36,7 +36,6 @@ export class ViewImageComponent implements OnInit {
                   {headers: headerList, params: paramsList}
                  )
       .subscribe (receivedData => {
-        console.log (receivedData);
         this.receivedImage = receivedData['images'];
       });
   }

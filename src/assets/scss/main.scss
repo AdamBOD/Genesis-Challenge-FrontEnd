@@ -123,6 +123,11 @@ body {
     }
   }
 
+  .nameBar {
+    background-color: $default-body-background-color;
+    text-align: center;
+  }
+
   .imageContainer {
     margin: 35px;
 
@@ -138,8 +143,27 @@ body {
     }
   }
 
+  .mat-tab-group {
+    height: 100;
+  }
+
   .mat-tab-label {
     user-select: none;
+  }
+
+  .paginationRow {
+    width: 50%;
+    justify-content: space-between;
+    margin: auto
+  }
+
+  footer {
+    bottom: 0;
+    width: 100%;
+    background-color: #acacac;
+    color: $default-header-colour;
+    text-align: center;
+    padding: 15px;
   }
 }
 

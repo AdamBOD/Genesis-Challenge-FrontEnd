@@ -6,7 +6,9 @@
     <a>Home</a>
   </div>
 </div>
-
+<div class="nameBar">
+    <h3>{{ artistName }}</h3>
+</div>
 <span *ngIf="receivedImages?.length == 0">Loading...</span>
 
 <div class="imageContainer" *ngIf="receivedImages?.length > 0">
