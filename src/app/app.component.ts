@@ -19,6 +19,8 @@ export class AppComponent implements OnInit {
       const queryParams: Params = Object.assign({}, this.route.snapshot.queryParams);
       queryParams['phrase'] = value;
       this.router.navigate(['.'], { queryParams: queryParams });
+    } else {
+      this.router.navigate(['.']);
     }
   }
 

@@ -12,19 +12,24 @@ import { ActivatedRoute } from '@angular/router';
 export class MatchImagesComponent implements OnInit {
   imagesArray: any[] = [];
   searchPhrase: string;
-  url = 'https://api.gettyimages.com/v3/search/images?page=1&page_size=10&sort_order=best_match&exclude_nudity=true&graphical_styles=illustration&number_of_people=none';
+  // tslint:disable-next-line:max-line-length
+  baseURL = 'https://api.gettyimages.com/v3/search/images?page=1&page_size=10&sort_order=best_match&exclude_nudity=true&graphical_styles=illustration&number_of_people=none';
+  url = this.baseURL;
 
   constructor (private http: HttpClient,
                private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      this.url = 'https://api.gettyimages.com/v3/search/images?page=1&page_size=10&sort_order=best_match&exclude_nudity=true&graphical_styles=illustration&number_of_people=none';
+      this.url = this.baseURL;
       if (params['phrase']) {
         this.searchPhrase = params['phrase'];
         this.url += '&phrase=' + params['phrase'];
         this.logIn();
         return;
+      } else {
+        this.url = this.baseURL + '&phrase=healthcare';
+        this.logIn();
       }
     });
     this.url += '&phrase=healthcare';

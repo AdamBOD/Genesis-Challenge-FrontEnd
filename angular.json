@@ -91,7 +91,9 @@
             ],
             "exclude": [
               "**/node_modules/**"
-            ]
+            ],
+            "fix": true,
+            "typeCheck": true
           }
         }
       }
@@ -113,7 +115,9 @@
             "tsConfig": "e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
-            ]
+            ],
+            "fix": true,
+            "typeCheck": true
           }
         }
       }

@@ -1,0 +1,16 @@
+<div class="navbar">
+  <div class="navbarButton" (click)="back()">
+    <a>Back</a>
+  </div>
+  <div class="navbarButton" [routerLink]="['']">
+    <a>Home</a>
+  </div>
+</div>
+
+<span *ngIf="receivedImages?.length == 0">Loading...</span>
+
+<div class="imageContainer" *ngIf="receivedImages?.length > 0">
+  <a href="{{ image.display_sizes[0].uri }}" *ngFor="let image of receivedImages" [routerLink]="['/image', image.id]">
+    <img src="{{ image.display_sizes[0].uri }}" alt="" title="">
+  </a>
+</div>

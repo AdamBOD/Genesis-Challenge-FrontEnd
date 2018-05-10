@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  height: 100%;
+  height: fit-content;
   background-color: $default-body-background-color;
   margin: 0;
 
@@ -100,6 +100,29 @@ body {
     }
   }
 
+  .navbar {
+    background-color: #acacac;
+    padding: 0;
+    align-items: unset;
+    justify-content: unset;
+    .navbarButton {
+      width: 5%;
+      cursor: pointer;
+      text-align: center;
+      color: $default-header-colour;
+      height: 100%;
+      padding: 12px;
+      &:hover {
+        background-color: #9b9b9b;
+      }
+
+      a {
+        text-decoration: none;
+        color: $default-header-colour;
+      }
+    }
+  }
+
   .imageContainer {
     margin: 35px;
 
@@ -109,6 +132,14 @@ body {
       border-style: none;
       margin: 25px;
     }
+
+    .imageInfo {
+      padding-top: 25px;
+    }
+  }
+
+  .mat-tab-label {
+    user-select: none;
   }
 }
 

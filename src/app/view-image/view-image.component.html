@@ -1,0 +1,24 @@
+<div class="navbar">
+  <div class="navbarButton" (click)="back()">
+    <a>Back</a>
+  </div>
+  <div class="navbarButton" [routerLink]="['']">
+    <a>Home</a>
+  </div>
+</div>
+
+<div class="imageContainer container" *ngIf="receivedImage">
+  <div class="row">
+    <div class="col-md-5">
+      <img src="{{ receivedImage[0].display_sizes[0].uri }}">
+    </div>
+    <div class="col-md-7 imageInfo">
+      <span>
+        <h2>{{ receivedImage[0].title }}</h2>
+        <p>{{ receivedImage[0].caption }}</p>
+        <a [routerLink]="['/artist', receivedImage[0].artist]">{{ receivedImage[0].artist }}</a>
+        <p>{{ receivedImage[0].date_submitted | date: 'longDate' }}</p>
+      </span>
+    </div>
+  </div>
+</div>
