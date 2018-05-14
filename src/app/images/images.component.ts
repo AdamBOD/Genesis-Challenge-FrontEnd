@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
@@ -17,7 +18,8 @@ export class ImagesComponent implements OnInit {
   baseURL = `https://api.gettyimages.com/v3/search/images?page=${this.pageIndex}&page_size=12&sort_order=most_popular&exclude_nudity=true&graphical_styles=illustration&number_of_people=none`;
   url = this.baseURL;
   constructor (private http: HttpClient,
-               private route: ActivatedRoute) {}
+               private route: ActivatedRoute,
+               private translate: TranslateService) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -44,6 +46,7 @@ export class ImagesComponent implements OnInit {
   loadImages (): void { // Observable <HttpResponse>
     const headerList = new HttpHeaders({
       'Api-Key': '549su8mukubjxp6xkg49gnk4',
+      'Accept-Language': this.translate.getBrowserLang()
     });
 
     const clientData = {'client_id': 'fjgw9c39ytqhgwfqte7aug5q',

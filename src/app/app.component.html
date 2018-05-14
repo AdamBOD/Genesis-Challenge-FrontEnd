@@ -1,22 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="jumbotron">
   <div class="row center-block">
-    <span class="heading">Genesis Images</span>
+    <span class="heading">{{ 'genesisImagesTitle' | translate }}</span>
   </div>
   <div class="row text-center">
     <div class="row searchBar">
-      <input type="text" placeholder="What are you looking for?" onfocus="this.placeholder=''" onblur="this.placeholder='What are you looking for?'" #searchInput>
+      <input type="text" placeholder="{{ 'searchPlaceholder' | translate }}" onfocus="this.placeholder=''" #searchInput >
       <div class="searchButton" (click)="search(searchInput.value)">
         <i class="fa fa-search"></i>
       </div>
     </div>
   </div>
   <div class="row">
-    <span class="challengeText">Challenge FrontEnd - Angular and Getty Images API</span>
+    <span class="challengeText">{{ 'pageDescription' | translate }}</span>
   </div>
   <div class="row">
-    <span class="welcomeText">Everything you need for your creative projects, websites, banners, presentations, magazines and advertising</span>
+    <span class="welcomeText">{{ 'pageWelcome' | translate }}</span>
   </div>
 </div>
 <router-outlet></router-outlet>
-<footer>Copyright © 2018 Genesis Automation in Healthcare . All rights reserved.</footer>
+<footer>{{ 'copyright' | translate }}</footer>

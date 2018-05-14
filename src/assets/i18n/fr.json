@@ -1,0 +1,15 @@
+{
+  "genesisImagesTitle": "Genesis Images",
+  "pageDescription": "Défi FrontEnd - Angular et API Getty Images",
+  "pageWelcome": "Tout ce dont vous avez besoin pour vos projets créatifs, sites Web, bannières, présentations, magazines et publicités",
+  "searchPlaceholder": "Qu'est que vous cherchez?",
+  "Best Match": "Meilleure correspondance",
+  "Newest": "Le Plus Niveau",
+  "Most Popular": "Le plus populaire",
+  "Next": "Prochain",
+  "Prev": "Précédent",
+  "Home": "Accuiel",
+  "Back": "Précédent",
+  "Loading...": "Chargement...",
+  "copyright": "Copyright © 2018 Genesis Automation dans les soins de santé. Tous les droits sont réservés."
+}

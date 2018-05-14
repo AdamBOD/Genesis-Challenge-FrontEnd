@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-artist',
@@ -15,7 +16,8 @@ export class ArtistComponent implements OnInit {
   artistName: string;
   constructor(private route: ActivatedRoute,
               private http: HttpClient,
-              private location: Location) { }
+              private location: Location,
+              private translate: TranslateService) { }
 
   ngOnInit() {
     this.artistName = this.route.snapshot.paramMap.get ('name');

@@ -1,4 +1,4 @@
-<span *ngIf="imagesArray?.length == 0">Loading...</span>
+<span *ngIf="imagesArray?.length == 0" i18n="@@loading">{{ 'Loading...' | translate }}</span>
 
 <div class="imageContainer" *ngIf="imagesArray?.length > 0">
 
@@ -13,7 +13,7 @@
     </p>
   </div>
   <div class="row paginationRow">
-    <button class="btn btn-primary" (click)="prevPage()" [disabled]="(pageIndex > 1) ? false : true">Prev</button>
-    <button class="btn btn-primary" (click)="nextPage()">Next</button>
+    <button class="btn btn-primary" (click)="prevPage()" [disabled]="(pageIndex > 1) ? false : true">{{ 'Prev' | translate }}</button>
+    <button class="btn btn-primary" (click)="nextPage()">{{ 'Next' | translate }}</button>
   </div>
 </div>

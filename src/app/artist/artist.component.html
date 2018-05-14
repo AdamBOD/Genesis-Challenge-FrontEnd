@@ -1,15 +1,15 @@
 <div class="navbar">
   <div class="navbarButton" (click)="back()">
-    <a>Back</a>
+    <a>{{ 'Back' | translate }}</a>
   </div>
   <div class="navbarButton" [routerLink]="['']">
-    <a>Home</a>
+    <a>{{ 'Home' | translate }}</a>
   </div>
 </div>
 <div class="nameBar">
     <h3>{{ artistName }}</h3>
 </div>
-<span *ngIf="receivedImages?.length == 0">Loading...</span>
+<span *ngIf="receivedImages?.length == 0">{{ 'Loading...' | translate }}</span>
 
 <div class="imageContainer" *ngIf="receivedImages?.length > 0">
   <div class="imageWrapper" *ngFor="let image of receivedImages">
@@ -23,7 +23,7 @@
     </p>
   </div>
   <div class="row paginationRow">
-    <button class="btn btn-primary" (click)="prevPage()" [disabled]="(pageIndex > 1) ? false : true">Prev</button>
-    <button class="btn btn-primary" (click)="nextPage()">Next</button>
+    <button class="btn btn-primary" (click)="prevPage()" [disabled]="(pageIndex > 1) ? false : true">{{ 'Prev' | translate }}</button>
+    <button class="btn btn-primary" (click)="nextPage()">{{ 'Next' | translate }}</button>
   </div>
 </div>

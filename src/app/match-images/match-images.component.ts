@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component ({
   selector: 'app-match-images',
@@ -18,7 +19,8 @@ export class MatchImagesComponent implements OnInit {
   url = this.baseURL;
 
   constructor (private http: HttpClient,
-               private route: ActivatedRoute) {}
+               private route: ActivatedRoute,
+               private translate: TranslateService) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -46,6 +48,7 @@ export class MatchImagesComponent implements OnInit {
   loadImages (): void {
     const headerList = new HttpHeaders({
       'Api-Key': '549su8mukubjxp6xkg49gnk4',
+      'Accept-Language': this.translate.getBrowserLang()
     });
 
     const clientData = {'client_id': 'fjgw9c39ytqhgwfqte7aug5q',

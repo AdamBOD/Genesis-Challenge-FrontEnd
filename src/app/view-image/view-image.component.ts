@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Location } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-view-image',
@@ -13,7 +14,8 @@ export class ViewImageComponent implements OnInit {
   url = this.baseURL;
   constructor(private route: ActivatedRoute,
               private http: HttpClient,
-              private location: Location) { }
+              private location: Location,
+              private translate: TranslateService) { }
 
   ngOnInit() {
     this.getImage (this.route.snapshot.paramMap.get ('id'));
@@ -24,6 +26,7 @@ export class ViewImageComponent implements OnInit {
 
     const headerList = new HttpHeaders({
       'Api-Key': '549su8mukubjxp6xkg49gnk4',
+      'Accept-Language': this.translate.getBrowserLang()
     });
 
     const clientData = {'client_id': 'fjgw9c39ytqhgwfqte7aug5q',
