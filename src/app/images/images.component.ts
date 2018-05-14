@@ -55,7 +55,6 @@ export class ImagesComponent implements OnInit {
                   {headers: headerList, params: paramsList}
                  )
       .subscribe (receivedData => {
-        console.log (receivedData);
         this.imagesArray = receivedData['images'];
         imageSubscription.unsubscribe();
       });

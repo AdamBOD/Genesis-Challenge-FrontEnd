@@ -53,18 +53,13 @@ export class MatchImagesComponent implements OnInit {
                         'grant_type': 'client_credentials'};
 
     const paramsList = {'fields': 'preview,detail_set'};
-    try {
-      const imageSubscription = this.http.get(this.url,
-                  {headers: headerList, params: paramsList}
-                 )
-      .subscribe (receivedData => {
-        this.imagesArray = receivedData['images'];
-        imageSubscription.unsubscribe();
-      });
-    } catch (error) {
-      console.log (error);
-      this.loadImages();
-    }
+    const imageSubscription = this.http.get(this.url,
+                {headers: headerList, params: paramsList}
+                )
+    .subscribe (receivedData => {
+      this.imagesArray = receivedData['images'];
+      imageSubscription.unsubscribe();
+    });
   }
 
   nextPage () {

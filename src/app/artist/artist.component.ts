@@ -40,7 +40,6 @@ export class ArtistComponent implements OnInit {
                   params: paramsList}
                  )
       .subscribe (receivedData => {
-        console.log (receivedData);
         this.receivedImages = receivedData['images'];
       });
   }
