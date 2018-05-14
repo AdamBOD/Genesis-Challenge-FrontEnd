@@ -131,15 +131,69 @@ body {
   .imageContainer {
     margin: 35px;
 
-    img {
+    // img {
+    //   width: 405px;
+    //   vertical-align: middle;
+    //   border-style: none;
+    //   margin: 25px;
+    // }
+
+    // .imageInfo {
+    //   padding-top: 25px;
+    // }
+  }
+
+  .imageWrapper {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    margin: 25px;
+    display: inline-grid;
+    &:hover .imageDescription {
+      opacity: 1;
+      visibility: visible;
+    }
+    .image {
+      opacity: 1;
       vertical-align: middle;
       width: 405px;
       border-style: none;
-      margin: 25px;
+      margin: 0px;
     }
 
-    .imageInfo {
-      padding-top: 25px;
+    .imageDescription {
+      width: 405px;
+      height: 100%;
+      background-color: #acacac;
+      cursor: pointer;
+      padding: 15px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      visibility: hidden;
+      margin: 0px;
+      transition: opacity .2s, visibility .2s;
+      display: table-column;
+      overflow-y: auto;
+
+      .imageTitle {
+        display: table-cell;
+        vertical-align: top;
+        font-weight: 600;
+      }
+
+      .imageCaption {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .imageDate {
+        display: table-cell;
+        vertical-align: bottom;
+      }
     }
   }
 
@@ -164,6 +218,10 @@ body {
     color: $default-header-colour;
     text-align: center;
     padding: 15px;
+  }
+
+  .grid-item {
+    width: fit-content;
   }
 }
 

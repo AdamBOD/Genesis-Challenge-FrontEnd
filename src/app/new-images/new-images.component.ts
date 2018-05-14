@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { Http, Response, RequestOptions } from '@angular/http';
 import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
@@ -52,7 +51,7 @@ export class NewImagesComponent implements OnInit {
                         'client_secret': 'SYu7ndUa8bMzBn2pJquVEa5WTNqHeh8KsGhsRzSvuS7zW',
                         'grant_type': 'client_credentials'};
 
-    const paramsList = {'fields': 'preview'};
+    const paramsList = {'fields': 'preview,detail_set'};
 
     const imageSubscription = this.http.get(this.url,
                   {headers: headerList, params: paramsList}

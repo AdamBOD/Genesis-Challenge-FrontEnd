@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ArtistComponent implements OnInit {
   receivedImages: any[];
   baseURL = 'https://api.gettyimages.com/v3/artists/images';
+  pageIndex = 1;
   url = this.baseURL;
   artistName: string;
   constructor(private route: ActivatedRoute,
@@ -18,12 +19,11 @@ export class ArtistComponent implements OnInit {
 
   ngOnInit() {
     this.artistName = this.route.snapshot.paramMap.get ('name');
-    this.getImage (this.artistName);
+    this.getImages (this.artistName);
   }
 
-  getImage (artistName: string) {
-    this.url += `?artist_name=${artistName}`;
-    console.log (this.url)
+  getImages (artistName: string) {
+    this.url = this.baseURL + `?artist_name=${artistName}&page=${this.pageIndex}&page_size=12`;
 
     const headerList = new HttpHeaders({
       'Api-Key': '549su8mukubjxp6xkg49gnk4',
@@ -47,5 +47,15 @@ export class ArtistComponent implements OnInit {
 
   back () {
     this.location.back();
+  }
+
+  nextPage () {
+    this.pageIndex ++;
+    this.getImages(this.artistName);
+  }
+
+  prevPage () {
+    this.pageIndex --;
+    this.getImages(this.artistName);
   }
 }
