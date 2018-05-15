@@ -53,7 +53,7 @@ import { ArtistComponent } from './artist/artist.component';
     MatTabsModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'en' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

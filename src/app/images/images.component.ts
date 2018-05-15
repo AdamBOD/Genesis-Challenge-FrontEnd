@@ -41,6 +41,19 @@ export class ImagesComponent implements OnInit {
     });
     this.url += '&phrase=healthcare';
     this.loadImages();
+
+    const headerList = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+
+    const clientData = {client_id: '549su8mukubjxp6xkg49gnk4',
+                        client_secret: 'tEb6vXnE4MwCJUTsQD44yaphUfwEwg8SgVw9n5h75CBZU',
+                        grant_type: 'client_credentials'};
+
+    const loginSubscription = this.http.post('https://api.gettyimages.com/oauth2/token', clientData, {headers: headerList})
+      .subscribe (response => {
+        console.log (response);
+      });
   }
 
   loadImages (): void { // Observable <HttpResponse>

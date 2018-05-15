@@ -9,7 +9,7 @@
 <div class="nameBar">
     <h3>{{ artistName }}</h3>
 </div>
-<span *ngIf="receivedImages?.length == 0">{{ 'Loading...' | translate }}</span>
+<img *ngIf="imagesArray?.length == 0" class ="loadingSpinner" src="../../assets/images/loading.gif">
 
 <div class="imageContainer" *ngIf="receivedImages?.length > 0">
   <div class="imageWrapper" *ngFor="let image of receivedImages">

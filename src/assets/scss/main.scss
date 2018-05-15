@@ -9,6 +9,12 @@ body {
   background-color: $default-body-background-color;
   margin: 0;
 
+  .loadingSpinner {
+    display: block;
+    margin: auto;
+    padding: 150px;
+  }
+
   .jumbotron {
     background-color: $default-header-background-colour;
     border-radius: 0px;
