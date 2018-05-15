@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
 @Component ({
-  selector: 'app-images',
-  templateUrl: './images.component.html'
+  selector: 'app-popular-images',
+  templateUrl: './popular-images.component.html'
 })
 
-export class ImagesComponent implements OnInit {
+export class PopularImagesComponent implements OnInit {
   imagesArray: any[] = [];
   searchPhrase: string;
   pageIndex = 1;

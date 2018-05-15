@@ -17,7 +17,7 @@ import { MatTabsModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { ImagesComponent } from './images/images.component';
+import { PopularImagesComponent } from './popular-images/popular-images.component';
 import { NewImagesComponent } from './new-images/new-images.component';
 import { MatchImagesComponent } from './match-images/match-images.component';
 import { ViewImageComponent } from './view-image/view-image.component';
@@ -27,7 +27,7 @@ import { ArtistComponent } from './artist/artist.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ImagesComponent,
+    PopularImagesComponent,
     NewImagesComponent,
     MatchImagesComponent,
     ViewImageComponent,
