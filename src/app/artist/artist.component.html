@@ -9,7 +9,7 @@
 <div class="nameBar">
     <h3>{{ artistName }}</h3>
 </div>
-<img *ngIf="receivedImages?.length == 0" class ="loadingSpinner" src="../../assets/images/loading.gif">
+<img *ngIf="!dataReceived" class ="loadingSpinner" src="../../assets/images/loading.gif">
 
 <div class="imageContainer" *ngIf="receivedImages?.length > 0">
   <div class="imageWrapper" *ngFor="let image of receivedImages">

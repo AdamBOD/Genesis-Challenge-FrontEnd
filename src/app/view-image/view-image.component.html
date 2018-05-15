@@ -7,6 +7,8 @@
   </div>
 </div>
 
+<img *ngIf="!receivedImage" class ="loadingSpinner" src="../../assets/images/loading.gif">
+
 <div class="imageContainer container" *ngIf="receivedImage">
   <div class="row">
     <div class="col-md-5">

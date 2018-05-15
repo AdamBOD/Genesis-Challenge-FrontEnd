@@ -10,6 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ArtistComponent implements OnInit {
   receivedImages: any[];
+  dataReceived = false;
   baseURL = 'https://api.gettyimages.com/v3/artists/images';
   pageIndex = 1;
   url = this.baseURL;
@@ -43,6 +44,7 @@ export class ArtistComponent implements OnInit {
                  )
       .subscribe (receivedData => {
         this.receivedImages = receivedData['images'];
+        this.dataReceived = true;
       });
   }
 
